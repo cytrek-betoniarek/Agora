@@ -5,7 +5,8 @@ To create a SQLite database run the following command in the Agora.Api folder:
 ```
 dotnet run seeddata
 ```
-<br>
+After the database is created, shut down the process creating it.
+<br><br><br>
 Admin login credentials: 
 <ul>  
 <li>login: admin@admin.admin</li>  
@@ -17,6 +18,6 @@ While using swagger, after getting the token from the login endpoint it's necess
 ```
 bearer {token}
 ```
-Please note that the token is supposed to be used without quotation marks
+Please note that the token is supposed to be used without quotation marks.
 <br><br><br>
-An example of the expected date format is "01.01.2000"
+An example of the expected date format is "01.01.2000".
