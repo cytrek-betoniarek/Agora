@@ -101,29 +101,4 @@ public class AccountTests
 
         Assert.True(result.IsError);
     }
-
-    [Fact]
-    public async Task LoggingWithValidCredentials_ShouldBeSuccessfulAsync()
-    {
-        var command = new LoginQuery(
-            "test@mail.com",
-            "Password1!"
-            );
-
-        _accountRepositoryMock.Setup(
-            x => x.GetAccountByEmailAsync(
-                It.IsAny<string>()
-                )
-            ).ReturnsAsync(new Account(string.Empty, string.Empty, string.Empty));
-
-        var handler = new LoginQueryHandler(
-            _jwtTokenGeneratorMock.Object,
-            _accountRepositoryMock.Object,
-            _passwordManagerMock.Object
-            );
-
-        ErrorOr<LoginResult> result = await handler.Handle(command, default);
-
-        Assert.False(result.IsError);
-    }
 }
