@@ -27,7 +27,7 @@ An example of the expected date format is "01.01.2000".
 
 To create docker image run (on linux it may be necessary to precede following commands with "sudo"):
 ```
-docker build --rm -t dist/agora-forum:v1 .
+docker build --rm -t dist/agora-forum:latest .
 ```
 To run image run:
 ```
