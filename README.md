@@ -21,3 +21,19 @@ bearer {token}
 Please note that the token is supposed to be used without quotation marks.
 <br><br><br>
 An example of the expected date format is "01.01.2000".
+<br><br>
+
+## Dockerization
+
+To create docker image run (on linux it may be necessary to precede following commands with "sudo"):
+```
+docker build --rm -t dist/agora-forum:v1 .
+```
+To run image run:
+```
+docker run --rm -p 5000:5000 -p 5001:5001 -e ASPNETCORE_HTTP_PORT=https://+:5001 -e ASPNETCORE_URLS=http://+:5000 dist/agora-forum:latest
+```
+Then swagger will be available at the following URL:
+```
+http://localhost:5000/swagger/index.html
+```
